@@ -1,0 +1,33 @@
+body {
+  overscroll-behavior: none;
+  text-rendering: optimizeSpeed;
+  font-family: "Inter", sans-serif;
+  height: inherit;
+  background: var(--black);
+  color: var(--white);
+}
+
+.container {
+  margin: 0 auto;
+  max-width:1240px;
+  width: 100%;
+}
+@media (max-width:1600px) {
+  .container {
+    width:1240px
+  }
+}
+@media (max-width:1439px) {
+  .container {
+    width:-webkit-calc(100vw - 80px);
+    width:-moz-calc(100vw - 80px);
+    width:calc(100vw - 80px)
+  }
+}
+@media (max-width:767px) {
+  .container {
+    width:-webkit-calc(100vw - 32px);
+    width:-moz-calc(100vw - 32px);
+    width:calc(100vw - 32px)
+  }
+}
