@@ -56,6 +56,7 @@ const { isLoading, hasError } = useImageLoader(src.value);
 .post-image {
   position: relative;
   width: 100%;
+  overflow: hidden;
   background-color: var(--dark-white);
 
   &__loading,
@@ -74,6 +75,13 @@ const { isLoading, hasError } = useImageLoader(src.value);
   &__image {
     background-size: cover;
     background-position: center;
+    transform: scale(1.25);
+    transition: transform .3s ease-in-out,-webkit-transform .3s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.15) rotate(-3deg);
+    }
   }
 
   &__error {
