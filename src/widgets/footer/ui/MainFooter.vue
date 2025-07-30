@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import { defineComponent, ref } from "vue";
+import { SOCIAL_LINKS } from "@/widgets/header/constants";
 
 defineComponent({
   name: "MainFooter",
@@ -12,7 +13,14 @@ const currentYear = ref(new Date().getFullYear());
   <footer class="main-footer">
     <section class="main-footer__copyright container">
       <p>
-        Сделано в <time class="main-footer__year">{{ currentYear }}</time>
+        Make by
+        <a :href="SOCIAL_LINKS[1].link">
+          UnderDogInc
+        </a>
+
+        <br>
+
+        <time class="main-footer__year">{{ currentYear }} year</time>
       </p>
     </section>
   </footer>
@@ -23,8 +31,14 @@ const currentYear = ref(new Date().getFullYear());
   border-top: 1px solid rgba(255, 255, 255, 0.4);
   padding: 16px 0;
 
-  p {
+  p, a {
+    color: var(--white);
     text-align: center;
+  }
+
+  &__year {
+    display: inline-block;
+    margin-top: 8px;
   }
 }
 </style>
